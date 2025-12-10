@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Starlight Void — Game Studio by America Silva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-main: #050509;
+      --bg-card: #12111a;
+      --accent: #a79bff;
+      --accent-soft: #8a7ce8;
+      --text-main: #e9e9f4;
+      --text-muted: #b6b3cc;
+      --border-soft: rgba(167, 155, 255, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at top, #171432 0, #050509 45%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(5, 5, 9, 0.95);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.2rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 0 3rem;
+    }
+
+    .logo {
+      width: 160px;
+      max-width: 60%;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 12px rgba(167, 155, 255, 0.4));
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: var(--accent-soft);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2.section-title {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .game-card {
+      background: var(--bg-card);
+      border-radius: 14px;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .game-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .game-role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .game-desc {
+      font-size: 0.9rem;
+      margin-bottom: 0.7rem;
+      color: var(--text-main);
+    }
+
+    .badges {
+      margin-bottom: 0.6rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      font-size: 0.7rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-soft);
+    }
+
+    .game-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .game-link {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    .game-link:hover {
+      text-decoration: underline;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      max-width: 700px;
+    }
+
+    .about-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+    }
+
+    .about-list li {
+      margin-bottom: 0.3rem;
+      color: var(--text-muted);
+    }
+
+    .about-list li::before {
+      content: "✶ ";
+      color: var(--accent-soft);
+    }
+
+    .contact-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: var(--accent-soft);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem 1.8rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-soft);
+      background: #050509;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 0.7rem 1rem;
+      }
+      nav a {
+        margin-left: 0.7rem;
+        font-size: 0.75rem;
+      }
+      .hero-title {
+        font-size: 1.7rem;
+      }
+      main {
+        padding: 2rem 1.1rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Starlight Void</h1>
+    <nav>
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <!-- Put your logo file in the same folder and keep this name or change src -->
+      <img src="starlight-void-logo.png" alt="Starlight Void logo" class="logo" />
+      <h2 class="hero-title">Game Studio by America Silva</h2>
+      <p class="hero-sub">Indie developer creating Unity games and prototypes.</p>
+      <p class="tagline">Exploring strange worlds, quiet stories, and starlit spaces.</p>
+      <p class="hero-note">
+        This portfolio collects my game projects as I study Computer Simulation &amp; Gaming
+        and continue making indie games during my college break.
+      </p>
+    </section>
+
+    <!-- GAMES -->
+    <section id="games">
+      <h2 class="section-title">Games &amp; Projects</h2>
+
+      <div class="games-grid">
+        <!-- GAME 1 -->
+        <article class="game-card">
+          <h3 class="game-title">Project Title #1</h3>
+          <p class="game-role">Solo Unity Project</p>
+          <p class="game-desc">
+            Short 1–3 sentence description of the game. What is the core idea,
+            genre, and what makes it interesting to play or build?
+          </p>
+          <div class="badges">
+            <span class="badge">Unity</span>
+            <span class="badge">C#</span>
+            <span class="badge">Prototype</span>
+          </div>
+          <p class="game-meta">
+            <strong>Platform:</strong> PC / WebGL<br />
+            <strong>Status:</strong> In development
+          </p>
+          <!-- When you have a build, update the href below -->
+          <!-- <a class="game-link" href="MyGameFolder/index.html" target="_blank">▶ Play in Browser</a> -->
+        </article>
+
+        <!-- GAME 2 -->
+        <article class="game-card">
+          <h3 class="game-title">Project Title #2</h3>
+          <p class="game-role">College / Class Project</p>
+          <p class="game-desc">
+            Describe what you focused on here: combat system, AI behavior,
+            level design, UI, or anything you are proud of.
+          </p>
+          <div class="badges">
+            <span class="badge">Third-Person</span>
+            <span class="badge">Gameplay</span>
+          </div>
+          <p class="game-meta">
+            <strong>Platform:</strong> PC<br />
+            <strong>Status:</strong> Completed demo
+          </p>
+        </article>
+
+        <!-- GAME 3 -->
+        <article class="game-card">
+          <h3 class="game-title">Project Title #3</h3>
+          <p class="game-role">Game Jam / Experiment</p>
+          <p class="game-desc">
+            Use this spot for a smaller jam or experimental prototype.
+            Mention the time limit, theme, or what you learned.
+          </p>
+          <div class="badges">
+            <span class="badge">Game Jam</span>
+            <span class="badge">48 hrs</span>
+          </div>
+          <p class="game-meta">
+            <strong>Platform:</strong> Web / PC<br />
+            <strong>Status:</strong> Jam submission
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Starlight Void</h2>
+      <p class="about-text">
+        I’m America Silva, an indie game developer behind Starlight Void.
+        I study Computer Simulation &amp; Gaming and build games in Unity.
+        Even while taking a short break from college, I’m still developing
+        small projects to grow my skills and portfolio.
+      </p>
+      <p class="about-text">
+        I enjoy gameplay programming, experimenting with mechanics, and
+        creating cozy or atmospheric experiences that feel like exploring
+        a small corner of the universe.
+      </p>
+      <ul class="about-list">
+        <li>Experience with Unity (2D &amp; 3D, C#, object pooling, controllers)</li>
+        <li>Interested in gameplay, UI, and small narrative experiences</li>
+        <li>Open to collaboration, QA testing, and learning new tools</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact &amp; Links</h2>
+      <p class="contact-text">
+        Want to collaborate, test a game, or talk about projects?
+      </p>
+      <p class="contact-text">
+        📧 Email:
+        <a href="mailto:youremail@example.com">youremail@example.com</a><br />
+        🔗 GitHub:
+        <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a><br />
+        🎮 Itch.io:
+        <a href="https://itch.io/profile/yourusername" target="_blank">itch.io/profile/yourusername</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Starlight Void · America Silva
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

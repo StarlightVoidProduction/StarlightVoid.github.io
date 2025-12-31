@@ -214,6 +214,37 @@
       color: var(--text-muted);
       margin-bottom: 0.5rem;
     }
+    /* Feedback buttons */
+.feedback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  background: rgba(167, 155, 255, 0.08);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(167, 155, 255, 0.12);
+  border-color: rgba(167, 155, 255, 0.55);
+}
+
+.btn-secondary {
+  background: rgba(138, 124, 232, 0.08);
+}
 
     a {
       color: var(--accent);
@@ -255,6 +286,7 @@
     <nav>
       <a href="#games">Games</a>
       <a href="#about">About</a>
+      <a href="#feedback">Feedback</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -357,7 +389,23 @@
         <li>Open to collaboration, QA testing, and learning new tools</li>
       </ul>
     </section>
+    <!-- FEEDBACK -->
+     <section id="feedback">
+     <h2 class="section-title">Feedback</h2>
+    <p class="contact-text">
+    Help shape what I build next ✶ Submit feedback on current games, or vote on what you want to see.
+    </p>
 
+   <div class="feedback-actions">
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScAMpfAKxMYPqK8WFcmk8JWXfWwjr_3pey8EierJTdc3n_dsg/viewform?usp=header" target="_blank">
+      📝 Game Feedback Form
+    </a>
+
+    <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScZUA-nbE4BzuX8BQFVSHB3sT2uBFvqdsoGzMvxOS9GaQiKzw/viewform?usp=header" target="_blank">
+      ⭐ What Games Should I Make?
+    </a>
+  </div>
+</section>
     <!-- CONTACT -->
     <section id="contact">
       <h2 class="section-title">Contact &amp; Links</h2>
@@ -366,9 +414,9 @@
       </p>
       <p class="contact-text">
         📧 Email:
-        <a href="mailto:youremail@example.com">youremail@example.com</a><br />
+        <a href="mailto:starlightvoidproductions@gmail.com">starlightvoidproductions@gmail.com</a><br />
         🔗 GitHub:
-        <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a><br />
+        <a href="https://starlightvoidproduction.github.io/StarlightVoid.github.io/#about" target="_blank">starlightvoidproduction.github.io</a><br />
         🎮 Itch.io:
         <a href="https://itch.io/profile/yourusername" target="_blank">itch.io/profile/yourusername</a>
       </p>
@@ -384,3 +432,4 @@
   </script>
 </body>
 </html>
+
